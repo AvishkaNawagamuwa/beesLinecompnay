@@ -31,12 +31,12 @@ export default function LoadingScreen() {
                         <img
                             src="/assets/images/logo1.png"
                             alt="Bees Line Exports Logo"
-                            className="w-24 h-24 object-contain"
+                            className="w-32 h-32 md:w-40 md:h-40 object-contain"
                             style={{ mixBlendMode: 'multiply' }}
                         />
                     </motion.div>
 
-                    <div className="relative w-16 h-16">
+                    <div className="relative w-20 h-20 md:w-24 md:h-24">
                         <motion.div
                             className="absolute inset-0 border-4 border-beige rounded-full"
                             style={{ borderTopColor: '#D4AF37' }}

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { fadeInUp, staggerContainer, cardVariants, scaleUp, slideInLeft, slideInRight } from '../lib/animationVariants'
 import Hero from '../components/Hero'
 import CertificateCard from '../components/CertificateCard'
 import CertificateModal from '../components/CertificateModal'
@@ -24,15 +25,17 @@ export default function Quality() {
             <Hero
                 title="Quality & Certifications"
                 subtitle="Internationally aligned manufacturing and safety standards for export markets"
+                bgImage="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1920&q=80"
             />
 
             {/* Certifications Grid Section */}
             <section className="py-20 bg-white">
                 <div className="container-custom">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: '-100px' }}
+                        variants={fadeInUp}
                         className="text-center mb-16"
                     >
                         <h2 className="section-title">Our Certifications</h2>
@@ -43,14 +46,18 @@ export default function Quality() {
                     </motion.div>
 
                     {/* Certificates Grid */}
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <motion.div
+                        className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: '-100px' }}
+                        variants={staggerContainer}
+                    >
                         {certificates.map((certificate, index) => (
                             <motion.div
                                 key={certificate.id}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
+                                variants={cardVariants}
+                                whileHover={{ y: -8, scale: 1.05 }}
                             >
                                 <CertificateCard
                                     certificate={certificate}
@@ -58,7 +65,7 @@ export default function Quality() {
                                 />
                             </motion.div>
                         ))}
-                    </div>
+                    </motion.div>
                 </div>
             </section>
 

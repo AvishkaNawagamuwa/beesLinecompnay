@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { fadeInUp, slideInLeft, slideInRight, scaleUp, staggerContainer, cardVariants } from '../lib/animationVariants'
 import Hero from '../components/Hero'
 
 export default function About() {
@@ -7,15 +8,17 @@ export default function About() {
             <Hero
                 title="About Us"
                 subtitle="Bridging Sri Lankan Herbal Heritage with Global Wellness Markets"
+                bgImage="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=1920&q=80"
             />
 
             {/* Our Story Section */}
             <section className="py-20 bg-white">
                 <div className="container-custom">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: '-100px' }}
+                        variants={fadeInUp}
                         className="text-center mb-16"
                     >
                         <h2 className="section-title">Our Story</h2>
@@ -24,9 +27,10 @@ export default function About() {
 
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <motion.div
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: '-100px' }}
+                            variants={slideInLeft}
                             className="space-y-6 text-gray-700 leading-relaxed text-lg"
                         >
                             <p>
@@ -41,18 +45,22 @@ export default function About() {
                         </motion.div>
 
                         <motion.div
-                            initial={{ opacity: 0, x: 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: '-100px' }}
+                            variants={slideInRight}
                             className="relative"
                         >
-                            <div className="aspect-square bg-beige rounded-2xl overflow-hidden shadow-xl">
+                            <motion.div
+                                className="aspect-square bg-beige rounded-2xl overflow-hidden shadow-xl"
+                                whileHover={{ y: -8, boxShadow: '0 20px 25px rgba(212, 175, 55, 0.15)' }}
+                            >
                                 <img
                                     src="/assets/images/products/garcinia.png"
                                     alt="Sri Lankan Herbs"
                                     className="w-full h-full object-contain p-8"
                                 />
-                            </div>
+                            </motion.div>
                         </motion.div>
                     </div>
                 </div>
@@ -61,12 +69,17 @@ export default function About() {
             {/* Mission & Vision */}
             <section className="py-20 bg-beige/30">
                 <div className="container-custom">
-                    <div className="grid md:grid-cols-2 gap-8">
+                    <motion.div
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: '-100px' }}
+                        variants={staggerContainer}
+                        className="grid md:grid-cols-2 gap-8"
+                    >
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="bg-white rounded-2xl p-8 shadow-lg"
+                            variants={cardVariants}
+                            whileHover={{ y: -8, boxShadow: '0 20px 25px rgba(212, 175, 55, 0.15)' }}
+                            className="bg-white rounded-2xl p-8 shadow-lg transition-all duration-300"
                         >
                             <div className="text-4xl mb-4">🎯</div>
                             <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
@@ -79,11 +92,9 @@ export default function About() {
                         </motion.div>
 
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.1 }}
-                            className="bg-white rounded-2xl p-8 shadow-lg"
+                            variants={cardVariants}
+                            whileHover={{ y: -8, boxShadow: '0 20px 25px rgba(212, 175, 55, 0.15)' }}
+                            className="bg-white rounded-2xl p-8 shadow-lg transition-all duration-300"
                         >
                             <div className="text-4xl mb-4">🌟</div>
                             <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
@@ -94,7 +105,7 @@ export default function About() {
                                 We envision a future where natural wellness is the first choice for health-conscious consumers across continents.
                             </p>
                         </motion.div>
-                    </div>
+                    </motion.div>
                 </div>
             </section>
 

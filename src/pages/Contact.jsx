@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { fadeInUp, staggerContainer, cardVariants, scaleUp, slideInLeft, slideInRight } from '../lib/animationVariants'
 import Hero from '../components/Hero'
 
 export default function Contact() {
@@ -71,6 +72,7 @@ export default function Contact() {
             <Hero
                 title="Contact Us"
                 subtitle="We're here to answer your questions and support your business"
+                bgImage="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80"
             />
 
             <section className="py-20 bg-white">
@@ -78,9 +80,9 @@ export default function Contact() {
                     <div className="grid md:grid-cols-2 gap-12">
                         {/* Contact Form */}
                         <motion.div
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.6 }}
+                            initial="hidden"
+                            animate="visible"
+                            variants={slideInLeft}
                         >
                             <h2 className="text-3xl font-bold text-gray-900 mb-4">Send Us a Message</h2>
                             <p className="text-gray-600 mb-8">
@@ -267,9 +269,10 @@ export default function Contact() {
 
                         {/* Contact Information */}
                         <motion.div
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
+                            initial="hidden"
+                            animate="visible"
+                            variants={slideInRight}
+                            transition={{ delay: 0.2 }}
                             className="space-y-8"
                         >
                             <div>
@@ -281,6 +284,7 @@ export default function Contact() {
 
                             {/* Contact Cards */}
                             <div className="space-y-6">
+                                {/* Address */}
                                 <div className="bg-beige/30 rounded-xl p-6">
                                     <div className="flex items-start">
                                         <div className="w-12 h-12 bg-gold rounded-lg flex items-center justify-center flex-shrink-0">
@@ -290,12 +294,39 @@ export default function Contact() {
                                             </svg>
                                         </div>
                                         <div className="ml-4">
-                                            <h3 className="text-lg font-semibold text-gray-900 mb-1">Location</h3>
-                                            <p className="text-gray-700">Sri Lanka</p>
+                                            <h3 className="text-lg font-semibold text-gray-900 mb-2">Address</h3>
+                                            <p className="text-gray-700 leading-relaxed text-sm">
+                                                Bees Line Exports (Pvt) Ltd<br />
+                                                No. 10, Horton Place<br />
+                                                Colombo 07, Sri Lanka
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
 
+                                {/* Phone */}
+                                <div className="bg-beige/30 rounded-xl p-6">
+                                    <div className="flex items-start">
+                                        <div className="w-12 h-12 bg-gold rounded-lg flex items-center justify-center flex-shrink-0">
+                                            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                            </svg>
+                                        </div>
+                                        <div className="ml-4">
+                                            <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
+                                            <div className="space-y-2">
+                                                <a href="tel:+94777182110" className="text-gold hover:underline block text-sm">
+                                                    +94 777 182 110
+                                                </a>
+                                                <a href="tel:+94777667576" className="text-gold hover:underline block text-sm">
+                                                    +94 777 667 576
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Email */}
                                 <div className="bg-beige/30 rounded-xl p-6">
                                     <div className="flex items-start">
                                         <div className="w-12 h-12 bg-gold rounded-lg flex items-center justify-center flex-shrink-0">
@@ -304,14 +335,20 @@ export default function Contact() {
                                             </svg>
                                         </div>
                                         <div className="ml-4">
-                                            <h3 className="text-lg font-semibold text-gray-900 mb-1">Email</h3>
-                                            <a href="mailto:info@beeslineexports.com" className="text-gold hover:underline">
-                                                info@beeslineexports.com
-                                            </a>
+                                            <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
+                                            <div className="space-y-2">
+                                                <a href="mailto:info@beeslineexport.com" className="text-gold hover:underline block text-sm">
+                                                    info@beeslineexport.com
+                                                </a>
+                                                <a href="mailto:beeslineexport@gmail.com" className="text-gold hover:underline block text-sm">
+                                                    beeslineexport@gmail.com
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
+                                {/* Business Hours */}
                                 <div className="bg-beige/30 rounded-xl p-6">
                                     <div className="flex items-start">
                                         <div className="w-12 h-12 bg-gold rounded-lg flex items-center justify-center flex-shrink-0">
@@ -321,36 +358,34 @@ export default function Contact() {
                                         </div>
                                         <div className="ml-4">
                                             <h3 className="text-lg font-semibold text-gray-900 mb-1">Business Hours</h3>
-                                            <p className="text-gray-700">Monday - Friday: 9:00 AM - 5:00 PM GMT+5:30</p>
+                                            <p className="text-gray-700 text-sm">Monday - Friday: 9:00 AM - 5:00 PM GMT+5:30</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Quick Links */}
-                            <div className="bg-gradient-to-br from-gold/10 to-primary-100/10 rounded-xl p-6 border-2 border-gold/20">
-                                <h3 className="text-xl font-semibold text-gray-900 mb-4">Quick Links</h3>
-                                <div className="space-y-3">
-                                    <a href="/request-export" className="flex items-center text-gray-700 hover:text-gold transition-colors">
-                                        <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        Request Export Quotation
-                                    </a>
-                                    <a href="/partners" className="flex items-center text-gray-700 hover:text-gold transition-colors">
-                                        <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        Become a Partner
-                                    </a>
-                                    <a href="/products" className="flex items-center text-gray-700 hover:text-gold transition-colors">
-                                        <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        View Products
-                                    </a>
+
+
+                            {/* Google Map */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                            >
+                                <h3 className="text-xl font-semibold text-gray-900 mb-4">Find Us on the Map</h3>
+                                <div className="rounded-xl overflow-hidden shadow-lg h-80">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.8748642066837!2d79.85862457619065!3d6.926789219099213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae259e76c5b6c8d%3A0x1234567890ab!2s10%20Horton%20Place%2C%20Colombo%2007!5e0!3m2!1sen!2slk!4v"
+                                        width="100%"
+                                        height="100%"
+                                        style={{ border: 0 }}
+                                        allowFullScreen=""
+                                        loading="lazy"
+                                        referrerPolicy="no-referrer-when-downgrade"
+                                        className="w-full h-full"
+                                    ></iframe>
                                 </div>
-                            </div>
+                            </motion.div>
                         </motion.div>
                     </div>
                 </div>

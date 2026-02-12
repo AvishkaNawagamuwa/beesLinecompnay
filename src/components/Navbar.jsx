@@ -40,12 +40,9 @@ export default function Navbar() {
                         <img
                             src="/assets/images/logo1.png"
                             alt="Bees Line Exports Logo"
-                            className="h-12 w-auto object-contain transform group-hover:scale-105 transition-transform duration-300"
+                            className="h-16 w-auto object-contain transform group-hover:scale-105 transition-transform duration-300"
                             style={{ mixBlendMode: 'multiply' }}
                         />
-                        <span className="text-xl font-semibold text-gray-900 hidden sm:block">
-                            Bees Line Exports
-                        </span>
                     </Link>
 
                     {/* Desktop Navigation */}

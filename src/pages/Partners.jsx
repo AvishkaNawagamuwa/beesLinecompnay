@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { fadeInUp, staggerContainer, cardVariants, scaleUp, slideInLeft, slideInRight } from '../lib/animationVariants'
 import Hero from '../components/Hero'
 
 export default function Partners() {
@@ -8,15 +9,17 @@ export default function Partners() {
             <Hero
                 title="Partner With Us"
                 subtitle="Join our growing network of international distributors"
+                bgImage="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80"
             />
 
             {/* Why Partner Section */}
             <section className="py-20 bg-white">
                 <div className="container-custom">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: '-100px' }}
+                        variants={fadeInUp}
                         className="text-center mb-16"
                     >
                         <h2 className="section-title">Why Partner With Us</h2>
@@ -26,7 +29,13 @@ export default function Partners() {
                         </p>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <motion.div
+                        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: '-100px' }}
+                        variants={staggerContainer}
+                    >
                         {[
                             {
                                 icon: '💰',
@@ -61,18 +70,16 @@ export default function Partners() {
                         ].map((benefit, index) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className="bg-beige/30 rounded-xl p-8 hover:shadow-xl transition-shadow"
+                                variants={cardVariants}
+                                whileHover={{ y: -8, boxShadow: '0 20px 25px rgba(212, 175, 55, 0.15)' }}
+                                className="bg-beige/30 rounded-xl p-8 transition-all duration-300"
                             >
-                                <div className="text-5xl mb-4">{benefit.icon}</div>
+                                <div className="text-5xl mb-4 inline-block">{benefit.icon}</div>
                                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{benefit.title}</h3>
                                 <p className="text-gray-700 leading-relaxed">{benefit.desc}</p>
                             </motion.div>
                         ))}
-                    </div>
+                    </motion.div>
                 </div>
             </section>
 

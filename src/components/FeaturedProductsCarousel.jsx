@@ -128,36 +128,35 @@ export default function FeaturedProductsCarousel() {
 
           .featured-products-carousel :global(.swiper-button-prev),
           .featured-products-carousel :global(.swiper-button-next) {
-            background: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            width: auto;
+            height: auto;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 2px solid transparent;
+            --swiper-navigation-color: rgba(212, 175, 55, 0.7);
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+          }
+
+          .featured-products-carousel:hover :global(.swiper-button-prev),
+          .featured-products-carousel:hover :global(.swiper-button-next) {
+            opacity: 1;
           }
 
           .featured-products-carousel :global(.swiper-button-prev:hover),
           .featured-products-carousel :global(.swiper-button-next:hover) {
-            background: linear-gradient(135deg, #D4AF37 0%, #F4E4B0 100%);
-            --swiper-navigation-color: white;
-            border-color: #D4AF37;
-            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+            --swiper-navigation-color: #D4AF37;
             transform: scale(1.15);
           }
 
           .featured-products-carousel :global(.swiper-button-prev::after),
           .featured-products-carousel :global(.swiper-button-next::after) {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
           }
 
           @media (max-width: 640px) {
-            .featured-products-carousel :global(.swiper-button-prev),
-            .featured-products-carousel :global(.swiper-button-next) {
-              width: 40px;
-              height: 40px;
-              --swiper-navigation-size: 32px;
+            .featured-products-carousel :global(.swiper-button-prev::after),
+            .featured-products-carousel :global(.swiper-button-next::after) {
+              font-size: 18px;
             }
           }
         `}</style>

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { fadeInUp, staggerContainer, cardVariants, scaleUp, slideInLeft } from '../lib/animationVariants'
 import Hero from '../components/Hero'
 
 export default function RequestExport() {

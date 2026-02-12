@@ -1,5 +1,6 @@
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { slideInLeft, slideInRight, fadeInUp, scaleUp } from '../lib/animationVariants'
 import { getProductBySlug } from '../data/products'
 
 export default function ProductDetails() {
@@ -42,18 +43,18 @@ export default function ProductDetails() {
                     <div className="grid md:grid-cols-2 gap-12">
                         {/* Image */}
                         <motion.div
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.6 }}
+                            initial="hidden"
+                            animate="visible"
+                            variants={slideInLeft}
                             className="relative"
                         >
-                            <div className="sticky top-24 bg-beige rounded-2xl p-8 aspect-square flex items-center justify-center">
+                            <motion.div className="sticky top-24 bg-beige rounded-2xl p-8 aspect-square flex items-center justify-center" whileHover={{ boxShadow: '0 20px 25px rgba(212, 175, 55, 0.15)' }}>
                                 <img
                                     src={product.image}
                                     alt={product.name}
                                     className="w-full h-full object-contain"
                                 />
-                            </div>
+                            </motion.div>
                             {product.featured && (
                                 <span className="absolute top-6 right-6 bg-gold text-white text-sm font-semibold px-4 py-2 rounded-full shadow-lg">
                                     Featured Product
@@ -63,9 +64,10 @@ export default function ProductDetails() {
 
                         {/* Content */}
                         <motion.div
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
+                            initial="hidden"
+                            animate="visible"
+                            variants={slideInRight}
+                            transition={{ delay: 0.2 }}
                         >
                             <span className="inline-block text-sm font-semibold text-gold uppercase tracking-wider mb-2">
                                 {product.category}
