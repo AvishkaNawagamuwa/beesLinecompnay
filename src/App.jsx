@@ -12,6 +12,7 @@ import Quality from './pages/Quality'
 import Partners from './pages/Partners'
 import Contact from './pages/Contact'
 import RequestExport from './pages/RequestExport'
+import PageWrapper from './components/PageWrapper'
 
 function App() {
     const location = useLocation()
@@ -25,14 +26,14 @@ function App() {
                 <main className="flex-grow">
                     <AnimatePresence mode="wait">
                         <Routes location={location} key={location.pathname}>
-                            <Route path="/" element={<Home />} />
-                            <Route path="/about" element={<About />} />
-                            <Route path="/products" element={<Products />} />
-                            <Route path="/products/:slug" element={<ProductDetails />} />
-                            <Route path="/quality" element={<Quality />} />
-                            <Route path="/partners" element={<Partners />} />
-                            <Route path="/contact" element={<Contact />} />
-                            <Route path="/request-export" element={<RequestExport />} />
+                            <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
+                            <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
+                            <Route path="/products" element={<PageWrapper><Products /></PageWrapper>} />
+                            <Route path="/products/:slug" element={<PageWrapper><ProductDetails /></PageWrapper>} />
+                            <Route path="/quality" element={<PageWrapper><Quality /></PageWrapper>} />
+                            <Route path="/partners" element={<PageWrapper><Partners /></PageWrapper>} />
+                            <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
+                            <Route path="/request-export" element={<PageWrapper><RequestExport /></PageWrapper>} />
                         </Routes>
                     </AnimatePresence>
                 </main>

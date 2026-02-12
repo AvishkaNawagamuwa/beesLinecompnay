@@ -71,6 +71,7 @@ export default function Contact() {
             <Hero
                 title="Contact Us"
                 subtitle="We're here to answer your questions and support your business"
+                bgImage="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1920&auto=format&fit=crop"
             />
 
             <section className="py-20 bg-white">
@@ -290,8 +291,12 @@ export default function Contact() {
                                             </svg>
                                         </div>
                                         <div className="ml-4">
-                                            <h3 className="text-lg font-semibold text-gray-900 mb-1">Location</h3>
-                                            <p className="text-gray-700">Sri Lanka</p>
+                                            <h3 className="text-lg font-semibold text-gray-900 mb-1">Address</h3>
+                                            <address className="not-italic text-gray-700 text-sm">
+                                                BEES LINE EXPORTS (Pvt) Ltd<br />
+                                                No. 10, Horton Place,<br />
+                                                Colombo 07, Sri Lanka
+                                            </address>
                                         </div>
                                     </div>
                                 </div>
@@ -305,9 +310,10 @@ export default function Contact() {
                                         </div>
                                         <div className="ml-4">
                                             <h3 className="text-lg font-semibold text-gray-900 mb-1">Email</h3>
-                                            <a href="mailto:info@beeslineexports.com" className="text-gold hover:underline">
-                                                info@beeslineexports.com
-                                            </a>
+                                            <div className="flex flex-col text-sm">
+                                                <a href="mailto:info@beeslineexport.com" className="text-gold hover:underline">info@beeslineexport.com</a>
+                                                <a href="mailto:beeslineexport@gmail.com" className="text-gold hover:underline">beeslineexport@gmail.com</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -316,39 +322,53 @@ export default function Contact() {
                                     <div className="flex items-start">
                                         <div className="w-12 h-12 bg-gold rounded-lg flex items-center justify-center flex-shrink-0">
                                             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h2.6a2 2 0 011.8 1.2L11 6h2l1.6-1.8A2 2 0 0116.2 3H19a2 2 0 012 2v14a2 2 0 01-2 2h-2.6a2 2 0 01-1.8-1.2L13 18h-2l-1.6 1.8A2 2 0 016.8 21H4a2 2 0 01-2-2V5z" />
                                             </svg>
                                         </div>
                                         <div className="ml-4">
-                                            <h3 className="text-lg font-semibold text-gray-900 mb-1">Business Hours</h3>
-                                            <p className="text-gray-700">Monday - Friday: 9:00 AM - 5:00 PM GMT+5:30</p>
+                                            <h3 className="text-lg font-semibold text-gray-900 mb-1">Phone</h3>
+                                            <div className="flex flex-col text-sm text-gray-700">
+                                                <a href="tel:+94777182110" className="hover:text-gold">+94 777 182 110</a>
+                                                <a href="tel:+94777667576" className="hover:text-gold">+94 777 667 576</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Quick Links */}
-                            <div className="bg-gradient-to-br from-gold/10 to-primary-100/10 rounded-xl p-6 border-2 border-gold/20">
-                                <h3 className="text-xl font-semibold text-gray-900 mb-4">Quick Links</h3>
-                                <div className="space-y-3">
-                                    <a href="/request-export" className="flex items-center text-gray-700 hover:text-gold transition-colors">
-                                        <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        Request Export Quotation
-                                    </a>
-                                    <a href="/partners" className="flex items-center text-gray-700 hover:text-gold transition-colors">
-                                        <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        Become a Partner
-                                    </a>
-                                    <a href="/products" className="flex items-center text-gray-700 hover:text-gold transition-colors">
-                                        <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        View Products
-                                    </a>
+                            <div className="grid gap-6">
+                                <div className="rounded-xl overflow-hidden border border-gray-100">
+                                    <iframe
+                                        title="Bees Line Exports Location"
+                                        src="https://www.google.com/maps?q=No+10+Horton+Place+Colombo+07+Sri+Lanka&output=embed"
+                                        className="w-full h-56 sm:h-72 md:h-64 lg:h-80 border-0"
+                                        allowFullScreen=""
+                                        loading="lazy"
+                                    />
+                                </div>
+
+                                <div className="bg-gradient-to-br from-gold/10 to-primary-100/10 rounded-xl p-6 border-2 border-gold/20">
+                                    <h3 className="text-xl font-semibold text-gray-900 mb-4">Quick Links</h3>
+                                    <div className="space-y-3">
+                                        <a href="/request-export" className="flex items-center text-gray-700 hover:text-gold transition-colors">
+                                            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                                            </svg>
+                                            Request Export Quotation
+                                        </a>
+                                        <a href="/partners" className="flex items-center text-gray-700 hover:text-gold transition-colors">
+                                            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                                            </svg>
+                                            Become a Partner
+                                        </a>
+                                        <a href="/products" className="flex items-center text-gray-700 hover:text-gold transition-colors">
+                                            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                                            </svg>
+                                            View Products
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>

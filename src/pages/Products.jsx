@@ -27,6 +27,7 @@ export default function Products() {
             <Hero
                 title="Our Premium Product Range"
                 subtitle="GMP-certified herbal capsules for stress relief, weight management, and optimal wellness"
+                bgImage="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1920&auto=format&fit=crop"
             />
 
             <section className="py-16">
@@ -68,8 +69,8 @@ export default function Products() {
                                     key={category.id}
                                     onClick={() => setSelectedCategory(category.value)}
                                     className={`px-6 py-2.5 rounded-lg font-medium transition-all duration-300 ${selectedCategory === category.value
-                                            ? 'bg-gold text-white shadow-lg transform scale-105'
-                                            : 'bg-beige text-gray-700 hover:bg-gold/20 hover:text-gold'
+                                        ? 'bg-gold text-white shadow-lg transform scale-105'
+                                        : 'bg-beige text-gray-700 hover:bg-gold/20 hover:text-gold'
                                         }`}
                                 >
                                     {category.label}

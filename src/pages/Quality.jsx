@@ -24,6 +24,7 @@ export default function Quality() {
             <Hero
                 title="Quality & Certifications"
                 subtitle="Internationally aligned manufacturing and safety standards for export markets"
+                bgImage="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1920&q=80"
             />
 
             {/* Certifications Grid Section */}

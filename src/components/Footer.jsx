@@ -83,20 +83,23 @@ export default function Footer() {
                     <div>
                         <h3 className="text-white font-semibold mb-4">Get in Touch</h3>
                         <ul className="space-y-3 text-sm">
-                            <li className="flex items-start space-x-2">
-                                <svg className="w-5 h-5 text-gold mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                                <span>Sri Lanka</span>
+                            <li>
+                                <p className="text-gray-400">BEES LINE EXPORTS (Pvt) Ltd</p>
+                                <address className="not-italic text-gray-400 text-sm">No. 10, Horton Place, Colombo 07, Sri Lanka</address>
                             </li>
-                            <li className="flex items-start space-x-2">
-                                <svg className="w-5 h-5 text-gold mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                                <a href="mailto:info@beeslineexports.com" className="hover:text-gold transition-colors">
-                                    info@beeslineexports.com
-                                </a>
+                            <li>
+                                <p className="text-gray-400">Phone</p>
+                                <div className="flex flex-col">
+                                    <a href="tel:+94777182110" className="text-gold hover:underline">+94 777 182 110</a>
+                                    <a href="tel:+94777667576" className="text-gold hover:underline">+94 777 667 576</a>
+                                </div>
+                            </li>
+                            <li>
+                                <p className="text-gray-400">Email</p>
+                                <div className="flex flex-col">
+                                    <a href="mailto:info@beeslineexport.com" className="text-gold hover:underline">info@beeslineexport.com</a>
+                                    <a href="mailto:beeslineexport@gmail.com" className="text-gold hover:underline">beeslineexport@gmail.com</a>
+                                </div>
                             </li>
                             <li>
                                 <Link to="/contact" className="inline-block mt-2 btn-primary text-sm">

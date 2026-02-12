@@ -8,6 +8,7 @@ export default function Partners() {
             <Hero
                 title="Partner With Us"
                 subtitle="Join our growing network of international distributors"
+                bgImage="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80"
             />
 
             {/* Why Partner Section */}

@@ -57,9 +57,9 @@ export default function FeaturedProductsCarousel() {
                     {featuredProducts.map((product) => (
                         <SwiperSlide key={product.id}>
                             <motion.div
-                                whileHover={{ y: -8, scale: 1.03 }}
-                                transition={{ duration: 0.3 }}
-                                className="bg-white rounded-xl shadow-md hover:shadow-2xl overflow-hidden h-full group"
+                                whileHover={{ y: -6, scale: 1.02 }}
+                                transition={{ duration: 0.25 }}
+                                className="bg-white rounded-xl shadow-md hover:shadow-xl overflow-hidden h-full group"
                             >
                                 {/* Image Container */}
                                 <Link
@@ -121,43 +121,49 @@ export default function FeaturedProductsCarousel() {
 
                 <style jsx>{`
           .featured-products-carousel {
-            --swiper-navigation-size: 40px;
-            --swiper-navigation-color: #D4AF37;
+            --swiper-navigation-size: 14px;
+            --swiper-navigation-color: #666;
             padding: 1rem 0;
           }
 
           .featured-products-carousel :global(.swiper-button-prev),
           .featured-products-carousel :global(.swiper-button-next) {
-            background: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 2px solid transparent;
+            background: transparent;
+            width: 34px;
+            height: 34px;
+            border: none;
+            transition: all 0.3s ease;
+            opacity: 0;
+          }
+
+          .featured-products-carousel:hover :global(.swiper-button-prev),
+          .featured-products-carousel:hover :global(.swiper-button-next) {
+            opacity: 1;
           }
 
           .featured-products-carousel :global(.swiper-button-prev:hover),
           .featured-products-carousel :global(.swiper-button-next:hover) {
-            background: linear-gradient(135deg, #D4AF37 0%, #F4E4B0 100%);
-            --swiper-navigation-color: white;
-            border-color: #D4AF37;
-            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+            --swiper-navigation-color: #D4AF37;
             transform: scale(1.15);
           }
 
           .featured-products-carousel :global(.swiper-button-prev::after),
           .featured-products-carousel :global(.swiper-button-next::after) {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
           }
 
           @media (max-width: 640px) {
             .featured-products-carousel :global(.swiper-button-prev),
             .featured-products-carousel :global(.swiper-button-next) {
-              width: 40px;
-              height: 40px;
-              --swiper-navigation-size: 32px;
+              width: 30px;
+              height: 30px;
+            }
+            
+            .featured-products-carousel :global(.swiper-button-prev::after),
+            .featured-products-carousel :global(.swiper-button-next::after) {
+              font-size: 18px;
             }
           }
         `}</style>

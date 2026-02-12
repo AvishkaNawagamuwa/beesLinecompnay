@@ -36,16 +36,14 @@ export default function Navbar() {
             <nav className="container-custom">
                 <div className="flex items-center justify-between">
                     {/* Logo */}
-                    <Link to="/" className="flex items-center space-x-3 group">
+                    <Link to="/" className="flex items-center group">
                         <img
                             src="/assets/images/logo1.png"
                             alt="Bees Line Exports Logo"
-                            className="h-12 w-auto object-contain transform group-hover:scale-105 transition-transform duration-300"
+                            className="h-16 w-auto object-contain transform group-hover:scale-105 transition-transform duration-300"
                             style={{ mixBlendMode: 'multiply' }}
                         />
-                        <span className="text-xl font-semibold text-gray-900 hidden sm:block">
-                            Bees Line Exports
-                        </span>
+                        {/* Company name intentionally hidden for a cleaner navbar */}
                     </Link>
 
                     {/* Desktop Navigation */}
